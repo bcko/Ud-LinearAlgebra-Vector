@@ -24,6 +24,10 @@ class Vector(object):
         new_coordiates = [c*x for x in self.coordinates]
         return Vector(new_coordinates)
 
+    def magnitude(self):
+        coordinates_squared = [x**2 for x in self.coordinates]
+        return sqrt(sum(coordinates_squared))
+
     def __str__(self):
         return 'Vector: {}'.format(self.coordinates)
 
