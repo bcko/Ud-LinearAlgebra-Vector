@@ -66,6 +66,10 @@ class Vector(object):
     def is_zero(self, tolerance=1e-10):
         return self.magnitude() < tolerance
 
+    def is_orthogonal_to(self, v, tolerance=1e-10):
+        return abs(self.dot(v)) < tolerance
+
+
     def __str__(self):
         return 'Vector: {}'.format(self.coordinates)
 
