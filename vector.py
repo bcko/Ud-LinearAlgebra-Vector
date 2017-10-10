@@ -63,6 +63,9 @@ class Vector(object):
             else:
                 raise e
 
+    def is_zero(self, tolerance=1e-10):
+        return self.magnitude() < tolerance
+
     def __str__(self):
         return 'Vector: {}'.format(self.coordinates)
 
