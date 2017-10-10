@@ -69,6 +69,11 @@ class Vector(object):
     def is_orthogonal_to(self, v, tolerance=1e-10):
         return abs(self.dot(v)) < tolerance
 
+    def is_parallel_to(self, v):
+        return ( self.is_zero() or 
+                v.is_zero() or
+                self.angle_with(v) == 0 or
+                self.angle_with(v) == pi )
 
     def __str__(self):
         return 'Vector: {}'.format(self.coordinates)
