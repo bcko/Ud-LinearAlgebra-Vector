@@ -28,6 +28,14 @@ class Vector(object):
         coordinates_squared = [x**2 for x in self.coordinates]
         return sqrt(sum(coordinates_squared))
 
+    def normalized(self):
+        try:
+            magnitude = self.magnitude()
+            return self.times_scalar(1./magnitude)
+
+        except ZeroDivisionError:
+            raise Exception('Cannot normalize the zero vector')
+
     def __str__(self):
         return 'Vector: {}'.format(self.coordinates)
 
