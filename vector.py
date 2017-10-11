@@ -120,6 +120,10 @@ class Vector(object):
     def area_of_triangle_with(self, v):
         return self.area_of_parallelogram_with(v) / Decimal('2.0')
 
+    def area_of_parallelogram_with(self, v):
+        cross_product = self.cross(v)
+        return cross_product.magnitude()
+
 
     def __str__(self):
         return 'Vector: {}'.format(self.coordinates)
