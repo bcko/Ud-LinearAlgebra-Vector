@@ -117,6 +117,9 @@ class Vector(object):
             else:
                 raise e
 
+    def area_of_triangle_with(self, v):
+        return self.area_of_parallelogram_with(v) / Decimal('2.0')
+
 
     def __str__(self):
         return 'Vector: {}'.format(self.coordinates)
